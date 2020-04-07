@@ -1,0 +1,98 @@
+# Project information
+site_name: 'Ansible wiki'
+site_description: 'ansible,wiki,ops,devops,运维自动化'
+site_author: 'lework'
+site_url: 'https://ansible.leops.cn'
+
+# Repository
+repo_name: 'leops-china/ansible-wiki'
+repo_url: 'https://github.com/leops-china/ansible-wiki'
+
+# Copyright
+copyright: 'Copyright &copy; 2020 - 2020 lework'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'zh'
+  feature:
+    tabs: true
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Customization
+extra:
+  utteranc:
+    repo: leops-china/ansible-wiki
+    issueTerm: pathname
+    theme: github-light
+  social:
+    - type: 'github'
+      link: 'https://github.com/leops-china/ansible-wiki'
+
+# Google Analytics
+#google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+nav:
+  - 'Ansible 入门': 
+     - '1. Ansible介绍': 'basic/Introduction.md'
+     - '2. 安装Ansible': 'basic/Installation.md'
+     - '3. 快速开始': 'basic/Quickstart.md'
+     - '4. 认识主机清单': 'basic/Inventory.md'
+     - '5. patterns匹配': 'basic/Patterns.md'
+     - '6. 使用ad-hoc命令': 'basic/Ad-hoc.md'
+     - '7. 熟悉ansible命令': 'basic/Ansible-command.md'
+     - '8. Playbook': 'basic/Playbook.md'
+     - '9. 包含和角色': 'basic/Include-roles.md'
+     - '10. 使用变量': 'basic/Variables.md'
+     - '11. facts数据': 'basic/Facts.md'
+     - '12. 模板Jinja2语法': 'basic/Jinja2.md'
+     - '13. 条件判断与循环': 'basic/Conditionals-loop.md'
+     - '14. Blocks': 'basic/Blocks.md'
+     - '15. Playbook 高级特性': 'basic/Playbook-features.md'
+     - '扩展阅读(深入必读)':
+       - '1. YAML 语法': 'basic/Reference/Yaml.md'
+       - '2. Vaults 加密数据': 'basic/Reference/Vaults.md'
+       - '3. 关键字使用': 'basic/Reference/Keywords.md'
+       - '4. 模块索引': 'basic/Reference/Module.md'
+       - '5. Ansible 配置': 'basic/Reference/Config.md'
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  
