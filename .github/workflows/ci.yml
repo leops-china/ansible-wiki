@@ -22,7 +22,7 @@ jobs:
       # Install theme and dependencies
       - run: |
           pip install -r requirements.txt
-          find / -name disqus.html -exec cp -fv disqus.html {} \;
+          sudo find /opt -name disqus.html -exec sudo cp -fv disqus.html {} \;
 
       # Set configuration for repository and deploy documentation
       - env:
