@@ -44,30 +44,6 @@ extra:
 #  - 'UA-XXXXXXXX-X'
 #  - 'auto'
 
-nav:
-  - 'Ansible 入门': 
-     - '1. Ansible介绍': 'basic/Introduction.md'
-     - '2. 安装Ansible': 'basic/Installation.md'
-     - '3. 快速开始': 'basic/Quickstart.md'
-     - '4. 认识主机清单': 'basic/Inventory.md'
-     - '5. patterns匹配': 'basic/Patterns.md'
-     - '6. 使用ad-hoc命令': 'basic/Ad-hoc.md'
-     - '7. 熟悉ansible命令': 'basic/Ansible-command.md'
-     - '8. Playbook': 'basic/Playbook.md'
-     - '9. 包含和角色': 'basic/Include-roles.md'
-     - '10. 使用变量': 'basic/Variables.md'
-     - '11. facts数据': 'basic/Facts.md'
-     - '12. 模板Jinja2语法': 'basic/Jinja2.md'
-     - '13. 条件判断与循环': 'basic/Conditionals-loop.md'
-     - '14. Blocks': 'basic/Blocks.md'
-     - '15. Playbook 高级特性': 'basic/Playbook-features.md'
-     - '扩展阅读(深入必读)':
-       - '1. YAML 语法': 'basic/Reference/Yaml.md'
-       - '2. Vaults 加密数据': 'basic/Reference/Vaults.md'
-       - '3. 关键字使用': 'basic/Reference/Keywords.md'
-       - '4. 模块索引': 'basic/Reference/Module.md'
-       - '5. Ansible 配置': 'basic/Reference/Config.md'
-
 # Extensions
 markdown_extensions:
   - markdown.extensions.admonition
@@ -105,3 +81,139 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   
+nav:
+  - 'Ansible 入门': 
+      - '1. Ansible 介绍': basic/Introduction.md
+      - '2. 安装 Ansible': basic/Installation.md
+      - '3. 快速开始': basic/Quickstart.md
+      - '4. 认识主机清单': basic/Inventory.md
+      - '5. Patterns 匹配': basic/Patterns.md
+      - '6. 使用 ad-hoc 命令': basic/Ad-hoc.md
+      - '7. 熟悉 ansible 命令': basic/Ansible-command.md
+      - '8. 使用 Playbook': basic/Playbook.md
+      - '9. 包含和角色': basic/Include-roles.md
+      - '10. 使用变量': basic/Variables.md
+      - '11. Facts 数据': basic/Facts.md
+      - '12. Jinja2 模板语法': basic/Jinja2.md
+      - '13. 条件判断与循环': basic/Conditionals-loop.md
+      - '14. Blocks': basic/Blocks.md
+      - '15. Playbook 高级特性': basic/Playbook-features.md
+      - '扩展阅读(深入必读)':
+         - '1. YAML 语法': basic/Reference/Yaml.md
+         - '2. Vaults 加密数据': basic/Reference/Vaults.md
+         - '3. 关键字使用': basic/Reference/Keywords.md
+         - '4. 模块索引': basic/Reference/Module.md
+         - '5. Ansible 配置': basic/Reference/Config.md
+      - 'Windows':
+         - '1. 管理 Windows 主机': basic/Windows/manager-windows.md
+  - 'Ansible 进阶': 
+     - 'Ansible 优化': advanced/optimization.md
+     - 'Ansible 最佳实践': advanced/best-practices.md
+     - 'Ansible 安全': 
+        - 'Ansible 控制节点安全': advanced/security/index.md
+        - '- 节点安全: 防火墙设置': advanced/security/firewall.md
+        - '- 节点安全: ssh登录二次验证': advanced/security/ssh-2step.md
+        - '- 节点安全: 命令审计': advanced/security/audit.md
+        - '- 节点安全: 加密主机清单': advanced/security/vault-hosts.md
+        - 过滤 Ansible 危险指令: advanced/security/filter-command.md
+     - 'Ansible 实践':
+        - 'Ansible Task片段': advanced/practice/snippets.md
+  - 'Ansible Roles':
+     - 'Ansible roles 怎么用？': roles/index.md
+     - '认证':
+        - kerberos-client: roles/auth/kerberos-client.md
+        - kerberos-server: roles/auth/kerberos-server.md
+        - openldap: roles/auth/openldap.md
+     - '系统环境': 
+        - ant: roles/env/ant.md
+        - erlang: roles/env/erlang.md
+        - go: roles/env/go.md
+        - hostnames: roles/env/hostnames.md
+        - java: roles/env/java.md
+        - lua: roles/env/lua.md
+        - mvn: roles/env/mvn.md
+        - nodejs: roles/env/nodejs.md
+        - openssh: roles/env/openssh.md
+        - openssl: roles/env/openssl.md
+        - os-init: roles/env/os-init.md
+        - php: roles/env/php.md
+        - python2.7: roles/env/python2.7.md
+        - repo-epel: roles/env/repo-epel.md
+        - ruby: roles/env/ruby.md
+        - sbt: roles/env/sbt.md
+        - ssh-2fa: roles/env/ssh-2fa.md
+        - ssh-keys: roles/env/ssh-keys.md
+        - update-kernel: roles/env/update-kernel.md
+     - 'WEB':
+        - nginx: roles/web/nginx.md
+        - openresty: roles/web/openresty.md
+        - tengine: roles/web/tengine.md
+        - tomcat: roles/web/tomcat.md
+     - '数据库':
+        - memcached: roles/database/memcached.md
+        - mongodb: roles/database/mongodb.md
+        - mycat: roles/database/mycat.md
+        - mysql: roles/database/mysql.md
+        - mysql57: roles/database/mysql57.md
+        - redis: roles/database/redis.md
+        - redis5: roles/database/redis5.md
+        - codis: roles/database/codis.md
+     - '键值存储':
+        - consul: roles/kv/consul.md
+        - etcd: roles/kv/etcd.md
+        - zookeeper: roles/kv/zookeeper.md
+     - '大数据':
+        - airflow: roles/bigdata/airflow.md
+        - cdh5-agent: roles/bigdata/cdh5-agent.md
+        - cdh5-pre: roles/bigdata/cdh5-pre.md
+        - cdh5-server: roles/bigdata/cdh5-server.md
+        - hadoop-standalone: roles/bigdata/hadoop-standalone.md
+        - superset: roles/bigdata/superset.md
+     - '消息系统':
+        - kafka: roles/mq/kafka.md
+        - kafka-manager: roles/mq/kafka-manager.md
+        - rabbitmq: roles/mq/rabbitmq.md
+     - '持续集成/交付':
+        - deploy-image: roles/ci/deploy-image.md
+        - deploy-static: roles/ci/deploy-static.md
+        - deploy-supervisor: roles/ci/deploy-supervisor.md
+        - deploy-tomcat: roles/ci/deploy-tomcat.md
+        - jenkins: roles/ci/jenkins.md
+        - nexus: roles/ci/nexus.md
+     - '高可用':
+        - keepalived: roles/ha/keepalived.md
+     - '代理':
+        - haproxy: roles/proxy/haproxy.md
+     - '监控':
+        - grafana: roles/monitor/grafana.md
+        - zabbix-agent: roles/monitor/zabbix-agent.md
+        - zabbix-server: roles/monitor/zabbix-server.md
+     - '日志分析':
+        - elasticsearch: roles/log/elasticsearch.md
+        - filebeat: roles/log/filebeat.md
+        - grokdebug: roles/log/grokdebug.md
+        - kibana: roles/log/kibana.md
+        - logstash: roles/log/logstash.md
+     - '存储':
+        - gluster: roles/storage/gluster.md
+        - nfs: roles/storage/nfs.md
+        - samba: roles/storage/samba.md
+        - vsftpd: roles/storage/vsftpd.md
+     - '容器':
+        - docker-compose: roles/container/docker-compose.md
+        - docker-swarm: roles/container/docker-swarm.md
+        - docker: roles/container/docker.md
+        - harbor: roles/container/harbor.md
+        - kubernetes-bin: roles/container/kubernetes-bin.md
+        - kubernetes: roles/container/kubernetes.md
+        - shipyard: roles/container/shipyard.md
+     - '数据同步':
+        - rsync: roles/sync/rsync.md
+        - sersync: roles/sync/sersync.md
+     - '其他':
+        - chrony: roles/other/chrony.md
+        - confd: roles/other/confd.md
+        - iptables: roles/other/iptables.md
+        - ntp: roles/other/ntp.md
+        - os-check: roles/other/os-check.md
+        - supervisor: roles/other/supervisor.md

@@ -1,22 +1,17 @@
-# 6. ad-hoc 命令
+# 6. 使用 ad-hoc 命令
 
- Ansible ad-hoc 命令使用 `/usr/bin/ansible`命令行工具来自动化一个或多个受管节点上的单个任务。 临时命令既快速又简单，但不可重用。
-
- 
+Ansible ad-hoc 命令使用 `/usr/bin/ansible`命令行工具来自动化一个或多个受管节点上的单个任务。 临时命令既快速又简单，但不可重用。
 
 ## ad-hoc 命令
 
 ```bash
 ansible [pattern] -m [module] -a "[module options]"
 ```
-
-
-
 执行结果说明
 
 rc:  命令返回码（0表示成功）
 
- ## ad-hoc 示例
+## ad-hoc 示例
 
 ### 执行shell命令
 

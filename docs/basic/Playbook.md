@@ -1,4 +1,4 @@
-# 7. 使用Playbook
+# 8. 使用 Playbook
 
 **Playbook**（剧本） 是 **Ansible** 指令的集合，其利用 YAML 语言编写，自上而下按顺序一次执行。
 

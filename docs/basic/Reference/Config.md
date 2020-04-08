@@ -1,3 +1,5 @@
+# Ansible 配置
+
 **Ansible** 支持几个源来配置它的行为，包括一个名为`ansible.cfg`的ini文件、环境变量、命令行选项、playbook关键字和变量。
 
 ## 配置文件

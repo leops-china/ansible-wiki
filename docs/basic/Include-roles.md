@@ -1,4 +1,4 @@
-# 8. 包含和角色
+# 9. 包含和角色
 
 虽然可以在一个非常大的文件中编写 playbook (您可能以这种方式开始学习 palybook)，但最终您将希望重用文件并开始组织工作。在Ansible中，有三种方法可以做到这一点: `includes`, `imports`, and`roles`。
 

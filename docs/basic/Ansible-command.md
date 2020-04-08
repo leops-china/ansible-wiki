@@ -1,5 +1,6 @@
-本文以 **ansible** 版本 `2.9.6`为准
+# 7. 熟悉 ansible 命令
 
+本文以 **Ansible** 版本 `2.9.6`为准
 
 ## ansible
 

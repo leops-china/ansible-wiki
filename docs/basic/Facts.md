@@ -1,4 +1,4 @@
-# 10. facts
+# 11. Facts 数据
 
 Facts主要是用来采集目标系统信息的，采集到信息存储在`ansible_facts`变量中，也有许多信息存储在以`ansible_`开头的变量。
 
