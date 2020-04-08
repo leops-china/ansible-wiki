@@ -15,8 +15,8 @@ copyright: 'Copyright &copy; 2020 - 2020 lework'
 theme:
   name: 'material'
   language: 'zh'
-  feature:
-    tabs: true
+  features:
+    - tabs
   palette:
     primary: 'indigo'
     accent: 'indigo'
@@ -36,7 +36,7 @@ extra:
     issueTerm: pathname
     theme: github-light
   social:
-    - type: 'github'
+    - icon: fontawesome/brands/github-alt
       link: 'https://github.com/leops-china/ansible-wiki'
 
 # Google Analytics
@@ -71,6 +71,7 @@ nav:
 # Extensions
 markdown_extensions:
   - markdown.extensions.admonition
+  - markdown.extensions.attr_list
   - markdown.extensions.codehilite:
       guess_lang: false
   - markdown.extensions.def_list
@@ -87,10 +88,18 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  # - pymdownx.highlight:
+  #     linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: leops-china
+      repo: ansible-wiki
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
