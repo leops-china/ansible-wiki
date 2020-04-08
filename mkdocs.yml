@@ -9,7 +9,7 @@ repo_name: 'leops-china/ansible-wiki'
 repo_url: 'https://github.com/leops-china/ansible-wiki'
 
 # Copyright
-copyright: 'Copyright &copy; 2020 - 2020 lework'
+copyright: 'Copyright &copy; 2020 - 2020 leops'
 
 # Configuration
 theme:
@@ -118,6 +118,13 @@ nav:
         - 过滤 Ansible 危险指令: advanced/security/filter-command.md
      - 'Ansible 实践':
         - 'Ansible Task片段': advanced/practice/snippets.md
+  - 'Ansible 开发':
+     - 'Ansible 开发说明': dev/index.md
+     - 'Ansible 调试':
+        - '模块调试': dev/debug/module-debug.md
+        - 'pdb 本地调试': dev/debug/pdb.md
+        - 'PyCharm 远程调试': dev/debug/pycharm.md
+
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
