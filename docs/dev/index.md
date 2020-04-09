@@ -9,8 +9,11 @@ http://docs.ansible.com/ansible/dev_guide/index.html
 ## 环境
 
 本次所用的环境
+
 - ansible `2.3.0.0`
+
 - os `Centos 6.7 X64`
+
 - python `2.6.6`
 
 ## 介绍

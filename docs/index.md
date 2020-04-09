@@ -9,9 +9,9 @@
 
 ## 指引
 
-如果你是 **新手** , 那么请从 **[Ansible 入门](/basic/)** 开始了解 **Ansible**。
+如果你是 **新手** , 那么请从 **[Ansible 入门](/basic/Introduction/)** 开始了解 **Ansible**。
 
-如果你是 **运维人员** , 那么请看看 **[Ansible 进阶](/advanced/)** 以便深入使用 **Ansible**。
+如果你是 **运维人员** , 那么请看看 **[Ansible 进阶](/advanced/optimization/)** 以便深入使用 **Ansible**。
 
 如果你想开发 **Ansible** 以实现自定义的功能, 那么请看看 **[Ansible 开发](/dev/)** 以便快速开发使用。
 
