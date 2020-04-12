@@ -109,6 +109,8 @@ nav:
   - 'Ansible 进阶': 
      - 'Ansible 优化': advanced/optimization.md
      - 'Ansible 最佳实践': advanced/best-practices.md
+     - '使用 Ansible-lint': advanced/ansible-lint.md
+     - '使用动态主机管理云服务': advanced/dynamic-inventory.md
      - 'Ansible 安全': 
         - 'Ansible 控制节点安全': advanced/security/index.md
         - '- 节点安全: 防火墙设置': advanced/security/firewall.md
@@ -120,11 +122,18 @@ nav:
         - 'Ansible Task片段': advanced/practice/snippets.md
   - 'Ansible 开发':
      - 'Ansible 开发说明': dev/index.md
-     - 'Ansible 调试':
-        - '模块调试': dev/debug/module-debug.md
+     - 'Ansible 调试': 
+        - '详细输出': dev/debug/verbose-debug.md
         - 'pdb 本地调试': dev/debug/pdb.md
         - 'PyCharm 远程调试': dev/debug/pycharm.md
-
+        - '模块调试': dev/debug/module-debug.md
+     - 'Module 开发':
+        - 'Module 开发说明': dev/modules/index.md
+        - '创建一个简单的module':  dev/modules/remote_copy.md
+        - 'module: 连接华为交换机':  dev/modules/huawei-switch.md
+        - 'module: 其他语言开发':  dev/modules/module-outher-dev.md
+        - 'module的返回值':  dev/modules/module-return.md
+        - 'module文档说明':  dev/modules/module-doc.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':

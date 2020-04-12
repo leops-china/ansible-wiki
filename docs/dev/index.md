@@ -18,7 +18,7 @@ http://docs.ansible.com/ansible/dev_guide/index.html
 
 ## 介绍
 
-Ansible 开发分为两大模块，一是`modules`，而是`plugins`。
+Ansible 开发分为两大模块，一是`modules`，二是`plugins`。
 
 首先，要记住这两部分内容在哪个地方执行？
 
@@ -34,3 +34,6 @@ Ansible 开发分为两大模块，一是`modules`，而是`plugins`。
 - `modules` 是ansible的核心内容，它使playbook变得更加简单明了，一个task就是完成某一项功能。ansible模块是被传送到远程主机上运行的。所以它们可以用远程主机可以执行的任何语言编写modules。
 
 - `plugins` 是在 **ansible控制节点** 上执行的，用来辅助modules做一些操作。比如连接远程主机，拷贝文件到远程主机之类的。
+
+
+最后，学习开发之前，要先学会[Debug](/dev/debug/verbose-debug/)

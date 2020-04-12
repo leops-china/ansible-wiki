@@ -326,4 +326,9 @@ plugins 相关的代码是在控制节点中执行的，可以使用本地调试
 !!! info
 	`module` 模块代码是在远端执行的，所以不能使用pdb本地调试
 
+## 本地运行模块
+
+```bash
+python -m pdb ./my_new_test_module.py ./args.json
+```
 
