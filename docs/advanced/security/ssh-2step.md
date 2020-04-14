@@ -113,23 +113,23 @@ service sshd restart
 添加帐号
 
 
-![image.png](/images/ssh-2step01.png)
+![image.png](/images/advanced/ssh-2step01.png)
 
-![image.png](/images/ssh-2step02.png)
+![image.png](/images/advanced/ssh-2step02.png)
 
 输入刚才生成的key
 
 
-![image.png](/images/ssh-2step03.png)
+![image.png](/images/advanced/ssh-2step03.png)
 
 点击添加
 
-![image.png](/images/ssh-2step04.png)
+![image.png](/images/advanced/ssh-2step04.png)
 
 
 这时，点击完成后，可以看到没美30秒一次变换的验证码
 
-![image.png](/images/ssh-2step05.png)
+![image.png](/images/advanced/ssh-2step05.png)
 
 
 
@@ -153,16 +153,16 @@ eth0      Link encap:Ethernet  HWaddr 00:0C:29:7D:D4:7A
 
 设置登陆方法为Keyboard Interactive
 
-![image.png](/images/ssh-2step06.png)
+![image.png](/images/advanced/ssh-2step06.png)
 
 先输入谷歌验证码
 
-![image.png](/images/ssh-2step07.png)
+![image.png](/images/advanced/ssh-2step07.png)
 
 再输入root密码
 
-![image.png](/images/ssh-2step08.png)
+![image.png](/images/advanced/ssh-2step08.png)
 
 成功登录
 
-![image.png](/images/ssh-2step09.png)
+![image.png](/images/advanced/ssh-2step09.png)

@@ -125,6 +125,7 @@ nav:
         - 'Ansible Task片段': advanced/practice/snippets.md
   - 'Ansible 开发':
      - 'Ansible 开发说明': dev/index.md
+     - '使用 PyCharm 远程开发': dev/pycharm-remote-development.md
      - 'Ansible 调试': 
         - '详细输出': dev/debug/verbose-debug.md
         - 'pdb 本地调试': dev/debug/pdb.md

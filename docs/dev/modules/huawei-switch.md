@@ -14,8 +14,8 @@
 华为的s5700交换机
 
 没有实体机的话，可以使用ensp，下图是我的测试环境
-![image.png](/images/huawei-switch01.png)
-![image.png](/images/huawei-switch02.png)
+![image.png](/images/dev/huawei-switch01.png)
+![image.png](/images/dev/huawei-switch02.png)
 
 ## 交换机开启ssh连接
 

@@ -18,7 +18,7 @@ Ansible是用Python编写的，它使用SSH在不同的机器上执行命令。A
 
 ## Ansible是怎么工作的
 
-![ansible-arch](/images/ansible-arch.png)
+![ansible-arch](/images/basic/ansible-arch.png)
 从上图可以看出，运行ansible的先决条件是，安装ansible到管理节点，定义主机清单，并有一些playbooks定义。
 
 
@@ -33,7 +33,7 @@ Ansible是用Python编写的，它使用SSH在不同的机器上执行命令。A
 Ansible然后读取主机清单以查找分配给Web组的节点。在这一点上，Ansible已经准备好开始工作，所以它将通过ssh远程连接到定义的机器，通常你会想要通过预共享密钥建立一些类型的ssh信任，这样你就不必在进行ssh登陆的时候输入密码。然后Ansible将开始逐步执行playbook中的任务，一次一个任务，从顶部到底部的顺序遍历它们，就像你手动登录执行任务一样。所以，它安装软件包，更新配置文件，使用git部署我们的网站代码，最后启动我们的Web服务。当Ansible很愉快的把一切都按预期的完成，你会得到一个执行成功的状态报告。
 
 可以用动图说明下此次过程。
-![ansible-arch](/images/ansible-arch.gif)
+![ansible-arch](/images/basic/ansible-arch.gif)
 
 ## 对管理主机的要求
 目前,只要机器上安装了 Python 2（版本2.6或2.7）或Python 3（版本3.5及更高版本）都可以运行Ansible (windows系统不可以做管理主机)
