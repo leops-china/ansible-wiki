@@ -1,8 +1,8 @@
 # 1. Ansible 介绍
 
-Ansible 是2013年推出的一种通用自动化工具，可用于配置管理或工作流程自动化。配置管理是一种" **基础架构代码** "实践，它将事物编码，例如应该在系统上安装什么包和版本，或者应该运行什么守护进程。工作流自动化可能是从配置基础架构到部署软件的任何事情。Ansible 在2015年时被Redhat公司收购。
+Ansible 是2012年推出的一种通用自动化工具，可用于配置管理或工作流程自动化。配置管理是一种" **基础架构代码** "实践，它将事物编码，例如应该在系统上安装什么包和版本，或者应该运行什么守护进程。工作流自动化可能是从配置基础架构到部署软件的任何事情。Ansible 在2015年时被Redhat公司收购。
 
-Ansible是用Python编写的，它使用SSH在不同的机器上执行命令。Ansible是无代理的，这使得入手更容易。您只需要在相关机器上安装SSH和Python。Ansible使用声明式YAML语言"playbook"将一组主机（从"hosts"）映射到定义明确的角色。声明性用于指示Ansible如何设置或更改事物，Ansible才进行必要的更改。
+Ansible是用Python编写的，它使用SSH在不同的机器上执行命令。Ansible是无代理的，这使得入手更容易。您只需要在相关机器上安装SSH和Python。Ansible使用声明式YAML语言"playbook"将一组主机（"hosts"）映射到定义明确的角色。声明性用于指示Ansible如何设置或更改事物，Ansible才进行必要的更改。
 
 ## Ansible 的目标
 
@@ -53,19 +53,14 @@ Ansible然后读取主机清单以查找分配给Web组的节点。在这一点�
 ### 主机清单(Inventory)
 托管节点的列表。库存文件有时也称为主机文件。您的目录可以为每个托管节点指定诸如IP地址之类的信息。库存还可以组织托管节点，创建和嵌套组，以便于扩展。要了解更多关于库存的信息，请参见使用[主机清单](/basic/Inventory/)一节。
 
-
 ### 模块(Modules)
-代码的单位Ansible执行。每个模块都有特定的用途，从管理特定类型数据库的用户到管理特定类型网络设备上的VLAN接口。您可以使用任务调用单个模块，也可以调用剧本中的几个不同模块。要了解Ansible包含多少个模块，请查看[所有模块](/basic/Reference/Module/)的列表。
-
+Ansible执行的具体代码。每个模块都有特定的用途，从管理特定类型数据库的用户到管理特定类型网络设备上的VLAN接口。您可以使用任务调用单个模块，也可以调用剧本中的几个不同模块。要了解Ansible包含多少个模块，请查看[所有模块](/basic/Reference/Module/)的列表。
 
 ### 任务(Tasks)
-Ansible的行动单位。您可以使用特别的命令一次性执行单个任务。
-
+Ansible的行动单位。tasks包含一组由module组成的任务列表, 您可以使用特别的命令一次性执行单个任务。
 
 ### 剧本(Playbooks)
 保存了已排序的任务列表，因此可以按此顺序重复运行这些任务。剧本可以包括变量和任务。剧本是用 **YAML** 编写的，易于阅读、编写、共享和理解。要了解更多关于剧本的信息，请查看[剧本](/basic/Playbook/)。
-
-
 
 
 ## 社区活跃
@@ -78,7 +73,6 @@ Ansible的行动单位。您可以使用特别的命令一次性执行单个任�
 - Github Starts `42,547`
 - Github Fork `18,764`
 - Github Contributors `4,955`
-
 
 ## ansible项目
 
@@ -100,8 +94,6 @@ https://www.ansible.com/products/tower
   了解使用 Ansible Tower。
 - RED HAT CERTIFICATE OF EXPERTISE IN ANSIBLE AUTOMATION (EX407)
   测试您使用Ansible自动配置系统和应用程序的技能，知识和能力。通过此考试，您将获得Ansible Automation的红帽认证证书。
-
-
 
 ## Ansible 与其它配置管理的对比
 
@@ -144,5 +136,3 @@ https://www.ansible.com/products/tower
 - ansible 电子书: https://www.ansible.com/resources/ebooks
 - 白皮书: https://www.ansible.com/resources/whitepapers
 - 用户案例: https://www.ansible.com/resources/case-studies
-
-

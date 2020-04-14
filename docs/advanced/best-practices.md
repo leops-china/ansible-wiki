@@ -304,19 +304,19 @@ block可以帮助组织代码，还可以启用回滚或输出数据以进行关
 
 Ansible为命令行交互和故障排除提供多个选项
 
-- `-vvvv` 打印debug信息
-- `--setp` 一步一步的执行
-- `--check` 执行检查，并不修改目标
-- `--diff` 对比执行结果
+- `-vvvv`           打印debug信息
+- `--step`          一步一步的执行,每次执行前需要手动确认(ansible-playbook 命令)
+- `--check`         执行检查，并不修改目标
+- `--diff`          对比执行结果
 - `--start-at-task` 从哪一个任务开始执行
 
 ### 分析运行的内容
 
 Ansible 提供了许多选项来显示你将要运行的内容
 
-- ` --list-tasks ` 列出运行的任务
-- ` --list-tags` 列出运行的tag
-- `--list-hosts` 列出运行的主机
+- `--list-tasks`   列出运行的任务
+- `--list-tags`    列出运行的tag
+- `--list-hosts`   列出运行的主机
 - `--syntax-check` 执行语法检测
 
 ### 无主机清单的快速启动
@@ -331,9 +331,9 @@ Ansible 提供了许多选项来显示你将要运行的内容
 
 - 执行playbook
 
-  ```bash
-  ansible-playbook -i neon.qxyz.de,neon2.qxyz.de site.yml
-  ```
+    ```bash
+    ansible-playbook -i neon.qxyz.de,neon2.qxyz.de site.yml
+    ```
 
 > 注意，单个主机要有`,`结尾
 
@@ -375,9 +375,7 @@ Ansible 提供了许多选项来显示你将要运行的内容
     {{ ansible_managed | comment }}
     ```
 
-
-
-###  使用ROLES 和  Galaxy  
+###  使用 Roles 和 Galaxy  
 
 **尽可能使用角色**， 角色可以让你您能够封装您的操作。
 
@@ -394,9 +392,7 @@ Ansible 提供了许多选项来显示你将要运行的内容
 - 选择可信或知名的作者
 
 
-
 ###  正确访问目标
-
 
 
 在可能的情况下，root访问比sudo - use sudo更难跟踪

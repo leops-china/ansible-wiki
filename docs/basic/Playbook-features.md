@@ -519,7 +519,39 @@ META: ran handlers
   retries: 30
 ```
 
+一个重启服务器的playbook
+```yaml
+---
+- hosts: 192.168.77.131
+  gather_facts: no
+  become: yes
 
+  tasks:
+   - name: Check the uptime prior reboot
+     shell: uptime
+     register: UPTIME_PRE_REBOOT
+
+   - debug: msg={{UPTIME_PRE_REBOOT.stdout}}
+
+   - name: Reboot node and stop polling.
+     shell: reboot
+     async: 10 # Do not care for 10 sec
+     poll: 0 # Fire & Forget
+
+   - name: wait for host to finish reboot
+     wait_for:
+      port: "{{ (ansible_port|default(ansible_ssh_port))|default(22) }}"
+      host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
+      search_regex: OpenSSH
+      delay: 10  # Do not check for at least 10 sec
+     connection: local
+
+   - name: Check the uptime post reboot
+     shell: uptime
+     register: UPTIME_POST_REBOOT
+
+   - debug: msg={{UPTIME_POST_REBOOT.stdout}}
+```
 
 
 

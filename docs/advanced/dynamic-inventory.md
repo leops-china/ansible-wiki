@@ -2,9 +2,50 @@
 
 如果你的 Ansible 主机清单随时间而变动，随着主机开启和关闭，以响应业务需求。那么静态配置的主机清单已经满足不了你的现状。 Ansible 支持两种方式来实现动态的主机清单: **Inventory** 插件和 **Inventory** 脚本。 
 
-**Inventory** 插件是随着Ansible核心代码更新的最新代码。对于动态主机清单，我们建议使用 **插件** 而不是脚本。您可以编写自己的插件来连接到其他动态主机清单源。 
+**Inventory** 插件是随着Ansible核心代码更新的最新代码。对于动态主机清单，我们建议使用 **Inventory 插件** 而不是脚本。您可以编写自己的插件来连接到其他动态主机清单源。 
 
+## Inventory 插件
 
+通过`ansible-doc`命令可列出当前可用的插件列表
+
+```bash
+# ansible-doc -t inventory -l 
+nmap                Uses nmap to find hosts to target                                                                            
+host_list           Parses a 'host list' string                                                                                  
+hcloud              Ansible dynamic inventory plugin for the Hetzner Cloud                                                       
+openstack           OpenStack inventory source                                                                                   
+vultr               Vultr inventory source                                                                                       
+aws_ec2             EC2 inventory source                                                                                         
+cloudscale          cloudscale.ch inventory source                                                                               
+virtualbox          virtualbox inventory source                                                                                  
+constructed         Uses Jinja2 to construct vars and groups based on existing inventory                                         
+k8s                 Kubernetes (K8s) inventory source                                                                            
+generator           Uses Jinja2 to construct hosts and groups from patterns                                                      
+script              Executes an inventory script that returns JSON                                                               
+vmware_vm_inventory VMware Guest inventory source                                                                                
+linode              Ansible dynamic inventory plugin for Linode                                                                  
+docker_machine      Docker Machine inventory source                                                                              
+yaml                Uses a specific YAML file as an inventory source                                                             
+online              Online inventory source                                                                                      
+azure_rm            Azure Resource Manager inventory plugin                                                                      
+docker_swarm        Ansible dynamic inventory plugin for Docker swarm nodes                                                      
+advanced_host_list  Parses a 'host list' with ranges                                                                             
+foreman             foreman inventory source                                                                                     
+auto                Loads and executes an inventory plugin specified in a YAML config                                            
+kubevirt            KubeVirt inventory source                                                                                    
+gitlab_runners      Ansible dynamic inventory plugin for GitLab runners                                                          
+netbox              NetBox inventory source                                                                                      
+gcp_compute         Google Cloud Compute Engine inventory source                                                                 
+aws_rds             rds instance source                                                                                          
+openshift           OpenShift inventory source                                                                                   
+toml                Uses a specific TOML file as an inventory source                                                             
+tower               Ansible dynamic inventory plugin for Ansible Tower                                                           
+scaleway            Scaleway inventory source                                                                                    
+ini                 Uses an Ansible INI file as inventory source       
+```
+
+!!! tips
+    inventory 插件的文件默认存储在 `/lib/python2.7/site-packages/ansible/plugins/inventory/` 目录中。
 
 ## AWS EC2 动态清单
 
@@ -106,7 +147,7 @@ ansible -i hosts_aws_ec2.yml tag_Env_test -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列两种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列两种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f /tmp/aws_inventory/aws_ec2*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新
@@ -201,7 +242,7 @@ ansible -i ec2.py tag_Env_test -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列三种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列三种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f /tmp/aws_inventory/aws_ec2*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新
@@ -213,7 +254,7 @@ ansible -i ec2.py tag_Env_test -m ping
 
 ###  使用 **Inventory** 插件
 
-目前 `ansible_alicloud` 只支持在`python3` 环境运行
+目前 `ansible_alicloud` 只支持在 `python3` 环境运行
 
 #### 安装依赖
 
@@ -284,7 +325,7 @@ ansible -i hosts_alicloud.yml tag_Env_test -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列两种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列两种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f /tmp/alicloud_inventory/alicloud_ecs*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新
@@ -293,9 +334,9 @@ ansible -i hosts_alicloud.yml tag_Env_test -m ping
 
 > 目前已不建议使用
 
-使用  [ECS external inventory]( https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py )  外部脚本来获取AWS EC2主机的信息。
+使用 [ECS external inventory]( https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py )  外部脚本来获取AWS EC2主机的信息。
 
-####  下载脚本
+#### 下载脚本
 
 ```bash
 wget https://raw.githubusercontent.com/alibaba/ansible-provider/2c9a81bf3d5d3f3e049e06479e1972e61b92c02c/contrib/inventory/alicloud.py
@@ -303,7 +344,7 @@ wget https://raw.githubusercontent.com/alibaba/ansible-provider/2c9a81bf3d5d3f3e
 chmod +x alicloud.py
 ```
 
-> 脚本只支持在`python3` 环境运行
+> 脚本只支持在 `python3` 环境运行
 >
 > 如果要在python2中运行，需将configparser库引用修正下
 >
@@ -366,7 +407,7 @@ ansible -i alicloud.py tag_Env_test -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列三种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列三种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f /tmp/alicloud_inventory/*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新s
@@ -374,7 +415,7 @@ ansible -i alicloud.py tag_Env_test -m ping
 
 ## OpenStack 动态清单
 
-###  使用 **Inventory** 插件
+### 使用 **Inventory** 插件
 
 #### 安装依赖
 
@@ -389,11 +430,11 @@ pip install openstacksdk
 
 #### 开启插件
 
-大多数随Ansible自带的插件在默认情况下是禁用的，需要在你的`Ansible .cfg`文件中加入白名单才能正常运行。 
+大多数随Ansible自带的插件在默认情况下是禁用的，需要在你的`Ansible.cfg`文件中加入白名单才能正常运行。 
 
 ```ini
 [inventory]
-enable_plugins = alicloud_ecs
+enable_plugins = openstack
 ```
 
 #### 配置插件
@@ -454,7 +495,7 @@ ansible -i hosts_openstack.yml zone1 -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列两种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列两种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f /tmp/openstack_inventory/*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新
@@ -465,7 +506,7 @@ ansible -i hosts_openstack.yml zone1 -m ping
 
 使用  [ECS external inventory]( https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/ec2.py )  外部脚本来获取AWS EC2主机的信息。
 
-####  下载脚本
+#### 下载脚本
 
 ```bash
 wget https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/openstack_inventory.py
@@ -519,7 +560,7 @@ ansible -i openstack_inventory.py zone3 -m ping
 
 #### 刷新 **Inventory**  Cache
 
-在指定了`cache: True` 时，Inventory信息会存在一定的时间，如果想获取最新的新，可使用下列三种方式
+在指定了`cache: True`时，Inventory信息会存在一定的时间，如果想获取最新的数据，可使用下列三种方式
 
 1. 手动的删除缓存信息, 比如删除缓存文件`rm -f ~/.cache/openstack/ansible-inventory.cache*`
 2. 使用 `ansible-playbook --flush-cache ` 命令来刷新s

@@ -35,7 +35,7 @@ yum install -y epel-release
 sed -e 's!^mirrorlist=!#mirrorlist=!g' \
     -e 's!^metalink=!#metalink=!g' \
     -e 's!^#baseurl=!baseurl=!g' \
-    -e 's!//download\.fedoraproject\.org/pub!//mirrors.aliyun.comg' \
+    -e 's!//download\.fedoraproject\.org/pub!//mirrors.aliyun.com!g' \
     -e 's!http://mirrors\.aliyun!https://mirrors.aliyun!g' \
     -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
 
