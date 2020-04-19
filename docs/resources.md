@@ -57,8 +57,9 @@
 - [TD4A](https://github.com/cidrblock/td4a) - Template designer for automation - TD4A is a visual design aid for building and testing jinja2 templates. It will combine data in yaml format with a jinja2 template and render the output.
 - [Packer Ansible Provisioner](https://packer.io/docs/provisioners/ansible-local.html) - This Provisioner can be used to automate VM Image Creation via Packer with Ansible.
 - [Excel Ansible Inventory](https://github.com/KeyboardInterrupt/ansible_xlsx_inventory) - Turn any Excel Spreadsheet into an Ansible Inventory
-
+- [ansible-bundler](https://github.com/kriansa/ansible-bundler) - Turn Ansible playbooks into executable files
 
 ## IDE
 - [Ansible Vim](https://github.com/pearofducks/ansible-vim) - 适用于 **Ansible** 语法 的 **vim** 插件
 - [VSCode extension for Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible) - 适用于 **Ansible** 的 **Visual Studio Code** 扩展
+- [JetBrains OrchidE](https://plugins.jetbrains.com/plugin/12626-orchide) - OrchidE provides language support for Ansible playbooks, roles and variables.

@@ -63,7 +63,7 @@ pip install boto3
 
 ```ini
 [inventory]
-enable_plugins = aws_ec2
+enable_plugins = host_list, script, auto, yaml, ini, toml, aws_ec2
 ```
 
 #### 配置插件
@@ -271,7 +271,7 @@ wget https://raw.githubusercontent.com/alibaba/ansible-provider/master/lib/ansib
 
 ```ini
 [inventory]
-enable_plugins = alicloud_ecs
+enable_plugins = host_list, script, auto, yaml, ini, toml, alicloud_ecs
 ```
 
 #### 配置插件
@@ -434,7 +434,7 @@ pip install openstacksdk
 
 ```ini
 [inventory]
-enable_plugins = openstack
+enable_plugins = host_list, script, auto, yaml, ini, toml, openstack
 ```
 
 #### 配置插件

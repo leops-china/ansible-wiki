@@ -125,6 +125,7 @@ nav:
         - 'Ansible Task片段': advanced/practice/snippets.md
   - 'Ansible 开发':
      - 'Ansible 开发说明': dev/index.md
+     - 'Ansible 架构': dev/ansible-architecture.md
      - '使用 PyCharm 远程开发': dev/pycharm-remote-development.md
      - 'Ansible 调试': 
         - '详细输出': dev/debug/verbose-debug.md
@@ -137,8 +138,11 @@ nav:
         - 'module: 连接华为交换机':  dev/modules/huawei-switch.md
         - 'module: 其他语言开发':  dev/modules/module-outher-dev.md
         - 'module: docker_facts':  dev/modules/module-docker-facts.md
+        - 'module: wechat':  dev/modules/module-wechat.md
         - 'module的返回值':  dev/modules/module-return.md
-        - 'module文档说明':  dev/modules/module-doc.md
+        - 'module的帮助文档':  dev/modules/module-doc.md
+        - 'module 架构':  dev/modules/module-architecture.md
+        - 'module 工具类':  dev/modules/module-utilities.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
