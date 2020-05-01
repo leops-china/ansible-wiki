@@ -46,7 +46,7 @@ ansible-playbook  -l all playbook.yml
 | 一个组             | `webservers`                    | `webservers`组中的主机                    |
 | 多个组(或匹配)     | `webservers:dbservers`          | `webservers`和`dbservers`所有的主机       |
 | 排除组(非模式匹配) | webservers:!atlanta             | `webservers`组中除`atlanta`之外的所有主机 |
-| 交集组(交集匹配)   | webservers:&staging             | `webservers`和`dbservers`都存在的主机     |
+| 交集组(交集匹配)   | webservers:&dbservers           | `webservers`和`dbservers`都存在的主机     |
 
  
 
@@ -122,7 +122,7 @@ webservers[0:25]
 - `[1:]` 表示组内第2个含第2个之后的所有成员
 - `[0:25] `表示组第1个到第24个成员
 
-### 则表达匹配
+### 正则表达式
 
 在开头的地方使用“~”，表示这是一个正则表达式
 

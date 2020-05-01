@@ -113,6 +113,7 @@ nav:
      - 'Ansible 优化': advanced/optimization.md
      - 'Ansible 最佳实践': advanced/best-practices.md
      - '使用 Ansible-lint': advanced/ansible-lint.md
+     - '使用动态主机': advanced/dynamic-hosts.md
      - '使用动态主机管理云服务': advanced/dynamic-inventory.md
      - 'Ansible 安全': 
         - 'Ansible 控制节点安全': advanced/security/index.md
@@ -123,6 +124,7 @@ nav:
         - 过滤 Ansible 危险指令: advanced/security/filter-command.md
      - 'Ansible 实践':
         - 'Ansible Task片段': advanced/practice/snippets.md
+        - '在 Jenkins 中使用 Ansible': advanced/practice/jenkins-and-ansible.md
   - 'Ansible 开发':
      - 'Ansible 开发说明': dev/index.md
      - 'Ansible 架构': dev/ansible-architecture.md
@@ -135,14 +137,19 @@ nav:
      - 'Module 开发':
         - 'Module 开发说明': dev/modules/index.md
         - '创建一个简单的module':  dev/modules/remote_copy.md
-        - 'module: 连接华为交换机':  dev/modules/huawei-switch.md
-        - 'module: 其他语言开发':  dev/modules/module-outher-dev.md
-        - 'module: docker_facts':  dev/modules/module-docker-facts.md
-        - 'module: wechat':  dev/modules/module-wechat.md
-        - 'module的返回值':  dev/modules/module-return.md
-        - 'module的帮助文档':  dev/modules/module-doc.md
+        - 'module 示例: 连接华为交换机':  dev/modules/huawei-switch.md
+        - 'module 示例: 其他语言开发':  dev/modules/module-outher-dev.md
+        - 'module 示例: docker_facts':  dev/modules/module-docker-facts.md
+        - 'module 示例: wechat':  dev/modules/module-wechat.md
+        - 'module 的返回值':  dev/modules/module-return.md
+        - 'module 的帮助文档':  dev/modules/module-doc.md
         - 'module 架构':  dev/modules/module-architecture.md
         - 'module 工具类':  dev/modules/module-utilities.md
+     - 'Plugin 开发':
+        - 'Plugin 开发说明': dev/plugins/index.md
+        - 'Callback 示例: BlackHole':  dev/plugins/Callback-BlackHole.md
+        - 'Filter 示例: split':  dev/plugins/Filter-split.md
+        - 'Inventory 示例: csv':  dev/plugins/Inventory-csv.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
