@@ -1,6 +1,6 @@
 # Project information
 site_name: 'Ansible wiki'
-site_description: 'ansible,wiki,ops,devops,运维自动化'
+site_description: 'ansible,wiki,ops,devops,auto,运维自动化'
 site_author: 'lework'
 site_url: 'https://ansible.leops.cn'
 
@@ -150,6 +150,12 @@ nav:
         - 'Callback 示例: BlackHole':  dev/plugins/Callback-BlackHole.md
         - 'Filter 示例: split':  dev/plugins/Filter-split.md
         - 'Inventory 示例: csv':  dev/plugins/Inventory-csv.md
+     - 'API 使用':
+        - 'API 使用说明': dev/api/index.md
+        - '使用 API 运行任务':  dev/api/api-task.md
+        - '使用 API 运行 Palybook':  dev/api/api-playbook.md
+        - '使用 suitable':  dev/api/api-suitable.md
+        - '使用 ansible runner':  dev/api/api-ansible-runner.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
