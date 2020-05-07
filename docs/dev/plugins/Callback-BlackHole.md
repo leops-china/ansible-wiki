@@ -1,4 +1,4 @@
-# BlackHole Callback
+# callback plugins: BlackHole
 
 ## 需求
 执行命令时，什么都不显示。把回显内容丢到黑洞去。

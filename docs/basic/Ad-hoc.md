@@ -246,14 +246,13 @@ ansible web -m user -a "name=user comment='I am user' uid=1040 group=admin"
 ansible web -m user -a "name=user shell=/bin/bash groups=admins,developers append=yes"
 ```
 
-
-删除用户 'user '
+删除用户 'user'
 ```bash
 ansible web -m user -a "name=user state=absent remove=yes"
 ```
 
 
-创建 user用户得   2048-bit SSH key，并存放在 ~user/.ssh/id_rsa
+创建 user 用户得 2048-bit SSH key，并存放在 ~user/.ssh/id_rsa
 ```bash
 ansible web -m user -a "name=user generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa"
 ```
@@ -265,38 +264,36 @@ ansible web -m user -a "name=user shell=/bin/zsh groups=nobdy expires=1422403387
 ```
 
 
-创建test组，并设置git为1000
+创建 test 组，并设置 gid 为1000
 ```bash
 ansible web -m group -a "name=test gid=1000 state=present"
 ```
 
-删除test组
+删除 test 组
 ```bash
 ansible web -m group -a "name=test state=absent"
 ```
-
-
 
 ### 版本控制
 
 #### git
 
-Ansible 模块能够通知变更，当代码更新时，可以告诉Ansible 做一些特定的任务，比如从git 部署代码然后重启apache 服务等
+Ansible 模块能够通知变更，当代码更新时，可以告诉 Ansible 做一些特定的任务，比如从git 部署代码然后重启 apache 服务等
 ```bash
-ansible web-m git -a "repo=https://github.com/Icinga/icinga2.git dest=/tmp/myapp   version=HEAD"
+ansible web -m git -a "repo=https://github.com/Icinga/icinga2.git dest=/tmp/myapp   version=HEAD"
 ```
 
 ### 服务管理
 
 #### service
 
-确保web组所有主机的httpd 是启动的
+确保 web 组所有主机的 httpd 是启动的
 ```bash
 ansible web -m service -a "name=httpd state=started"
 ```
 
 
-重启web组所有主机的httpd 服务
+重启 web 组所有主机的httpd 服务
 ```bash
 ansible web -m service -a "name=httpd state=restarted"
 ```
@@ -434,7 +431,7 @@ ansible all -B 1800 -P 60 -a "/usr/bin/long_running_operation --do-stuff"
 
 ## 练习
 
-大家通过下列命令来查看帮助，练习下其他模块的使用。
+大家通过下列命令来查看帮助，练习下表格中常用模块的使用。
 
 ```bash
 ansible-doc file

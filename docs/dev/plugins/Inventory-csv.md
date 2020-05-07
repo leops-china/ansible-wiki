@@ -1,3 +1,5 @@
+# inventory plugins: my_csv_plugin
+
 ## 需求
 
 使用`csv`文件作为动态主机源，为ansible提供动态主机支持
@@ -212,6 +214,8 @@ a_web02,10.2.1.3,Aliyun,Service,Centos
     ```
 
 ### 脚本示例
+
+`my_csv_plugin.py`
 
 ```python
 from __future__ import (absolute_import, division, print_function)

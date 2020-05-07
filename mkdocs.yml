@@ -147,9 +147,12 @@ nav:
         - 'module 工具类':  dev/modules/module-utilities.md
      - 'Plugin 开发':
         - 'Plugin 开发说明': dev/plugins/index.md
+        - 'Action 示例: hello':  dev/plugins/Action-hello.md
         - 'Callback 示例: BlackHole':  dev/plugins/Callback-BlackHole.md
         - 'Filter 示例: split':  dev/plugins/Filter-split.md
         - 'Inventory 示例: csv':  dev/plugins/Inventory-csv.md
+        - 'Lookup 示例: github_status':  dev/plugins/Lookup-github-status.md
+        - 'Vars 示例: csv_vars':  dev/plugins/Vars-csv-vars.md
      - 'API 使用':
         - 'API 使用说明': dev/api/index.md
         - '使用 API 运行任务':  dev/api/api-task.md
