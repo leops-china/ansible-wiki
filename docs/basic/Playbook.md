@@ -20,6 +20,8 @@ play的主要功能在于将事先归并为一组的主机装扮成事先通过a
 
 ## playbool 示例
 
+> centos7 环境
+
 开始书写我们第一个playbook
 
 **第一步：** 定义我们得主机清单
@@ -60,8 +62,8 @@ web组的主机完成下列任务
       state: latest
   - name: write the apache config file
     template:
-      src: /srv/httpd.j2
-      dest: /etc/httpd.conf
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
     notify:
     - restart apache
   - name: ensure apache is running
@@ -73,6 +75,93 @@ web组的主机完成下列任务
       service:
         name: httpd
         state: restarted
+```
+
+当前目录下的 `httpd.j2` 文件内容
+
+```
+ServerRoot "/etc/httpd"
+Listen {{ http_port }}
+
+Include conf.modules.d/*.conf
+
+User apache
+Group apache
+
+ServerAdmin root@localhost
+
+<Directory />
+    AllowOverride none
+    Require all denied
+</Directory>
+
+DocumentRoot "/var/www/html"
+
+<Directory "/var/www">
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<Directory "/var/www/html">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+
+<Files ".ht*">
+    Require all denied
+</Files>
+
+ErrorLog "logs/error_log"
+LogLevel warn
+
+<IfModule log_config_module>
+    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+    LogFormat "%h %l %u %t \"%r\" %>s %b" common
+    <IfModule logio_module>
+      LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
+    </IfModule>
+    CustomLog "logs/access_log" combined
+</IfModule>
+
+<IfModule alias_module>
+    ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
+</IfModule>
+
+<Directory "/var/www/cgi-bin">
+    AllowOverride None
+    Options None
+    Require all granted
+</Directory>
+
+<IfModule mime_module>
+    TypesConfig /etc/mime.types
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
+    AddType text/html .shtml
+    AddOutputFilter INCLUDES .shtml
+</IfModule>
+
+AddDefaultCharset UTF-8
+<IfModule mime_magic_module>
+    MIMEMagicFile conf/magic
+</IfModule>
+
+<IfModule mpm_prefork_module>
+    ServerLimit        256
+    StartServers         5
+    MinSpareServers      5
+    MaxSpareServers     10
+    MaxClients          {{ max_clients }}
+    MaxRequestsPerChild  0
+</IfModule>
+
+EnableSendfile on
+IncludeOptional conf.d/*.conf
 ```
 
 题外：一个playbook文件可以拥有多个play, 比如我们在加一个`databases`组的数据库安装操作
@@ -89,8 +178,8 @@ web组的主机完成下列任务
       state: latest
   - name: write the apache config file
     template:
-      src: /srv/httpd.j2
-      dest: /etc/httpd.conf
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
 
 - hosts: databases
   remote_user: root
