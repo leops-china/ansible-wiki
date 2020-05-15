@@ -163,6 +163,9 @@ nav:
      - 'Ansible UI 说明': ui/index.md
      - 'Ansible Awx': ui/awx.md
      - 'Ansible Tower': ui/tower.md
+  - 'Ansible 认证':
+     - 'Ansible 认证说明': certification/index.md
+     - 'EX407 示例试题': certification/ex407-example.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
