@@ -15,6 +15,7 @@
 
 如果你想开发 **Ansible** 以实现自定义的功能, 那么请看看 **[Ansible 开发](/dev/)** 以便快速开发使用。
 
+如果你想在 **WEB** 界面上执行 **ansible** , 那么请看看 **[Ansible UI](/ui/)** 以便快速在 WEB 中使用。
 
 如果你想寻找可使用的 **Roles** , 那么请看看 **[Ansible Roles](/roles/)** 以便快速应用。
 

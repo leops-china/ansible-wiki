@@ -159,6 +159,10 @@ nav:
         - '使用 API 运行 Palybook':  dev/api/api-playbook.md
         - '使用 suitable':  dev/api/api-suitable.md
         - '使用 ansible runner':  dev/api/api-ansible-runner.md
+  - 'Ansible UI':
+     - 'Ansible UI 说明': ui/index.md
+     - 'Ansible Awx': ui/awx.md
+     - 'Ansible Tower': ui/tower.md
   - 'Ansible Roles':
      - 'Ansible roles 怎么用？': roles/index.md
      - '认证':
