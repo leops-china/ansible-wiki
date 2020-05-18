@@ -125,6 +125,8 @@ nav:
      - 'Ansible 实践':
         - 'Ansible Task片段': advanced/practice/snippets.md
         - '在 Jenkins 中使用 Ansible': advanced/practice/jenkins-and-ansible.md
+     - '使用 ARA 记录 Ansible 执行结果': advanced/ara.md
+     - '使用 Ansible-cmdb': advanced/ansible-cmdb.md
   - 'Ansible 开发':
      - 'Ansible 开发说明': dev/index.md
      - 'Ansible 架构': dev/ansible-architecture.md

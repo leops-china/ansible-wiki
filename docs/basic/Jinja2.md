@@ -385,7 +385,7 @@ tasks:
 
 #### 强制定义变量
 
-如果变量未定义，则来自**ansible**和**ansible.cfg**的默认行为为失败，但您可以将其关闭。
+如果变量未定义，则来自 **ansible** 和 **ansible.cfg** 的默认行为为失败，但您可以将其关闭。
 
 ```jinja2
 {{ variable | mandatory }}
@@ -403,7 +403,7 @@ tasks:
 {{ lookup('env', 'MY_USER') | default('admin', false) }}
 ```
 
-如果变量未定义，则将默认值赋值给变量，如果希望变量值为空的时候也赋值，需将**default**第二个值为`true`
+如果变量未定义，则将默认值赋值给变量，如果希望变量值为空的时候也赋值，需将 **default** 第二个值为`true`
 
 
 
