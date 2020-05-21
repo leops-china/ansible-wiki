@@ -18,7 +18,7 @@ play的主要功能在于将事先归并为一组的主机装扮成事先通过a
 
  
 
-## playbool 示例
+## Playbook 示例
 
 > centos7 环境
 
@@ -77,9 +77,12 @@ web组的主机完成下列任务
         state: restarted
 ```
 
+> `remote_user` `vars` 等等这些都是ansible的playbook对象的关键字, 全部可用的关键字列表见 [Ansible 关键字](/basic/Reference/Keywords/)
+
+
 当前目录下的 `httpd.j2` 文件内容
 
-```
+```jinja2
 ServerRoot "/etc/httpd"
 Listen {{ http_port }}
 
@@ -442,7 +445,7 @@ tasks:
 
 
 
-## playbook 执行
+## 执行 Playbook
 
 使用`ansible-playbook`命令执行`playbook`
 
