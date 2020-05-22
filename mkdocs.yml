@@ -88,6 +88,7 @@ markdown_extensions:
 nav:
   - 'Home': index.md
   - 'Ansible 资源': resources.md
+  - '赞赏支持': appreciate.md
   - 'Ansible 入门': 
       - '1. Ansible 介绍': basic/Introduction.md
       - '2. 安装 Ansible': basic/Installation.md

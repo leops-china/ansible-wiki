@@ -1,0 +1,25 @@
+# 赞赏支持
+
+若您觉得本站点所创造的内容对您有所帮助，可考虑略表心意，支持一下。
+
+!!! Success "注意了！"
+    在支持的页面，务必要填写 **Ansible** + **您的ID**，以便于本站点将您的赞赏填写在下列中。
+
+
+<div>
+<label>
+  <img title="微信赞赏" alt="微信赞赏" width="200px" src="/images/appreciate/wechat.png" />
+</label>
+
+<label>
+    <img title="支付宝赞赏" alt="支付宝赞赏" width="200px" src="/images/appreciate/alipay.png" />
+</label>
+</div>
+
+
+## 赞赏列表
+
+| ID   | 金额 | 时间 |
+| ---- | ---- | ---- |
+|      |      |      |
+
