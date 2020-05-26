@@ -337,11 +337,11 @@ alias_host | SUCCESS => {
 **配置远程主机秘钥**
 ```bash
 # ssh-keygen -t rsa -P '' -b 4096 -f ~/.ssh/id_rsa
-# # cat  ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+# cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # chmod 600 ~/.ssh/authorized_keys
 ```
 
-**将刚刚生成的私钥`~/.ssh/id_rsa` 拷贝到 ansible 节点**
+**将刚刚生成的私钥 `~/.ssh/id_rsa` 拷贝到 ansible 节点**
 ```bash
 # mv id_rsa /opt/131.key
 # chmod 600 /opt/131.key
@@ -353,6 +353,13 @@ alias_host | SUCCESS => {
 192.168.77.131 ansible_ssh_private_key_file=/opt/131.key
 ```
 > 不指定 `ansible_user` 则使用运行ansible命令的用户
+
+!!! note
+    如果 `private_key` 使用了 **passphrase** ，可使用下列命令，将密码保存在 ssh-agent 中。
+    ```bash
+    ssh-agent bash
+    ssh-add /opt/131.key
+    ```
 
 **测试连通性**
 ```bash

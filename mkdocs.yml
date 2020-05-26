@@ -145,6 +145,7 @@ nav:
         - '创建一个简单的module':  dev/modules/remote_copy.md
         - 'module 示例: 连接华为交换机':  dev/modules/huawei-switch.md
         - 'module 示例: 其他语言开发':  dev/modules/module-outher-dev.md
+        - 'module 示例: dir':  dev/modules/module-shell-dir.md
         - 'module 示例: docker_facts':  dev/modules/module-docker-facts.md
         - 'module 示例: wechat':  dev/modules/module-wechat.md
         - 'module 的返回值':  dev/modules/module-return.md
@@ -227,6 +228,7 @@ nav:
         - kafka: roles/mq/kafka.md
         - kafka-manager: roles/mq/kafka-manager.md
         - rabbitmq: roles/mq/rabbitmq.md
+        - rocketmq: roles/mq/rocketmq.md
      - '持续集成/交付':
         - deploy-image: roles/ci/deploy-image.md
         - deploy-static: roles/ci/deploy-static.md
