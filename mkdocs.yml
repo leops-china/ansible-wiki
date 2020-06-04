@@ -115,6 +115,7 @@ nav:
          - '1. 管理 Windows 主机': basic/Windows/manager-windows.md
   - 'Ansible 进阶': 
      - 'Ansible 优化': advanced/optimization.md
+     - 'Ansible 的常用设置': advanced/ansible-config.md
      - 'Ansible 最佳实践': advanced/best-practices.md
      - '使用 Ansible-lint': advanced/ansible-lint.md
      - '使用动态主机': advanced/dynamic-hosts.md

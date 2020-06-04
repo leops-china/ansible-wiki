@@ -553,6 +553,8 @@ host_key_checking = False
 # Uncomment to use the provided example inventory
 #inventory = inventory/hosts.example
 
+ansible_managed = Ansible managed: {file} modified by {uid} on {host}
+
 [inventory]
 # fail more helpfully when the inventory file does not parse (Ansible 2.4+)
 unparsed_is_failed=true
