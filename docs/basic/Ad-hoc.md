@@ -351,7 +351,7 @@ ansible all -m lineinfile  -a "dest=/tmp/config regexp=^SELINUX= state=absent"
 ```
 
 
-如果文件不存在，则向文件中添加一行
+如果文件中, line值不存在，则向文件中添加line的内容
 ```bash
 ansible all -m lineinfile  -a "dest=/tmp/config  line='test'"
 ```
