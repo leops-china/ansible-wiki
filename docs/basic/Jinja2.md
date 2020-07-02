@@ -233,9 +233,8 @@ Jinja 允许你用计算值。这在模板中很少用到，但是为了完整�
 | not    | 对一个表达式取反（见下）。                       |
 | (expr) | 表达式组。                                       |
 
- !!! note 提示
-
-​	is 和 in 运算符同样支持使用中缀记法: foo is not bar 和 foo not in bar 而不是 not foo is bar 和 not foo in bar 。所有的 其它表达式需要前缀记法 not (foo and bar) 。
+!!! note 提示
+    is 和 in 运算符同样支持使用中缀记法: foo is not bar 和 foo not in bar 而不是 not foo is bar 和 not foo in bar 。所有的 其它表达式需要前缀记法 not (foo and bar) 。
 
  **其它运算符**
 

@@ -264,6 +264,7 @@ nav:
         - kubernetes-bin: roles/container/kubernetes-bin.md
         - kubernetes: roles/container/kubernetes.md
         - shipyard: roles/container/shipyard.md
+        - nomad: roles/container/nomad.md
      - '数据同步':
         - rsync: roles/sync/rsync.md
         - sersync: roles/sync/sersync.md
@@ -274,3 +275,5 @@ nav:
         - ntp: roles/other/ntp.md
         - os-check: roles/other/os-check.md
         - supervisor: roles/other/supervisor.md
+        - vault: roles/other/vault.md
+        - cfssl: roles/other/cfssl.md

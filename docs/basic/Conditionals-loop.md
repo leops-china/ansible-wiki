@@ -691,7 +691,7 @@ loop_control:
   extended: yes
 ```
 
- #### 获取`loop_var`的名称
+#### 获取`loop_var`的名称
 
 从ansible2.8开始，你可以通过` ansible_loop_var` 来获取 ` loop_control.loop_var `的值
 
