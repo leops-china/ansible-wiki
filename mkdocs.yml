@@ -268,12 +268,14 @@ nav:
      - '数据同步':
         - rsync: roles/sync/rsync.md
         - sersync: roles/sync/sersync.md
+     - '运维管理':
+        - os-check: roles/ops/os-check.md
+        - backup-file: roles/ops/backup-file.md
      - '其他':
         - chrony: roles/other/chrony.md
         - confd: roles/other/confd.md
         - iptables: roles/other/iptables.md
         - ntp: roles/other/ntp.md
-        - os-check: roles/other/os-check.md
         - supervisor: roles/other/supervisor.md
         - vault: roles/other/vault.md
         - cfssl: roles/other/cfssl.md

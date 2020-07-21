@@ -344,7 +344,7 @@ ansible 提供了许多内置变量，来帮助大家获取当前运行的诸多
 | ansible_loop_var                           | 提供给`loop_control.loop_var`的值的名称                      | `{{ ansible_loop_var }}`                                     |
 | ansible_index_var                          | 提供给`loop_control.index_var`的值的名称                     | `{{ ansible_index_var }}`                                    |
 | ansible_parent_role_paths                  | 当通过`include_role`或`import_role`操作执行当前角色时，此变量包含所有父角色的列表，而最新角色（即包含/导入该角色的角色）是列表中的第一项。 | `{{ ansible_parent_role_paths }}`                            |
-| ansible_play_hosts<br />ansible_play_batch | 包含当前运行的主机列表，受serial参数影响                     | ``{{ ansible_play_hosts }}`<br />{{ ansible_play_batch }}`   |
+| ansible_play_hosts<br />ansible_play_batch | 包含当前运行的主机列表，受serial参数影响                     | `{{ ansible_play_hosts }}`<br />`{{ ansible_play_batch }}`   |
 | ansible_play_hosts_all                     | 所有执行主机的列表                                           | `{{ ansible_play_hosts_all }}`                               |
 | ansible_play_role_names                    | 当前导入到当前剧本中的角色的名称                             | `{{ ansible_play_role_names }}`                              |
 | ansible_playbook_python                    | 控制器上Ansible使用的python解释器的路径                      | `{{ ansible_playbook_python }}`                              |
