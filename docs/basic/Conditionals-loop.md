@@ -30,7 +30,7 @@ tasks:
           (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_major_version'] == "7")
 ```
 
-可以使用列表形式来表示条件为**and**的关系
+可以使用列表形式来表示条件为 **and** 的关系
 
 ```yaml
 tasks:
@@ -741,6 +741,21 @@ loop_control:
   debug:
     msg: "{{ item }}"
   loop: "{{ items | flatten(levels=1) }}"
+  
+
+- name: with_items with muliti lists within a list
+  debug: msg={{ item }}
+  with_items: 
+    - "{{ foo }}"
+    - "{{ bar }}"
+        
+- name: loop with a list within lists of list  ( {{ list | union(list) }} )
+  debug: msg={{ item }}
+  loop: "{{ foo | union(bar) }}"
+
+- name: loop with a list within lists of list  ( {{ list + list }} )
+  debug: msg={{ item }}
+  loop: "{{ foo + bar }}"
 ```
 
 #### with_indexed_items

@@ -981,12 +981,19 @@ switchport trunk allowed vlan add {{ parsed_vlans[i] }}
 
 
 过滤器的第三个参数也可以是一个列表，用于容器内的递归查找：
+
 ```jinja2
 {{ ['a']|map('extract', b, ['x','y'])|list }}
 
 #  b['a']['x']['y']
 ```
 
+map中也可以使用其他过滤器
+
+```jinja2
+# 更改列表中的文件目录
+{{ ['/test/t.gz'] | map('basename')| map('regex_replace', '(.*)', '/tmp/\\1') | list )}}
+```
 
 
 #### 注释过滤

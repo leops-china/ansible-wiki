@@ -251,6 +251,8 @@ nav:
         - grokdebug: roles/log/grokdebug.md
         - kibana: roles/log/kibana.md
         - logstash: roles/log/logstash.md
+        - heartbeat: roles/log/heartbeat.md
+        - metricbeat: roles/log/metricbeat.md
      - '存储':
         - gluster: roles/storage/gluster.md
         - nfs: roles/storage/nfs.md
