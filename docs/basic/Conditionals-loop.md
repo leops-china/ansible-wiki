@@ -246,7 +246,7 @@ somethingelse: 42
 tasks:
     - command: echo faild.
       register: command_result
-      ailed_when: "'faild' in command_result.stdout"
+      failed_when: "'faild' in command_result.stdout"
     
     - debug: msg="echo test"
 ```
