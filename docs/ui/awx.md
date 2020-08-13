@@ -320,3 +320,20 @@ EOF
 执行完，就能看到执行的详细信息
 
 ![ad-hoc3.png](/images/ui/awx/ad-hoc3.png)
+
+
+
+### AWX配置LDAP
+这里以Windows AD为例
+
+详细用法可以参考[官方tower文档](https://docs.ansible.com/ansible-tower/latest/html/administration/ldap_auth.html)
+
+设置流程参考:
+
+![ldap-1.png](/images/ui/awx/ldap-1.png)
+
+![ldap-2.png](/images/ui/awx/ldap-2.png)
+
+![ldap-3.png](/images/ui/awx/ldap-3.png)
+
+具体报错信息可以查看 `docker logs -f awx_web`
