@@ -58,6 +58,9 @@
 - [Packer Ansible Provisioner](https://packer.io/docs/provisioners/ansible-local.html) - This Provisioner can be used to automate VM Image Creation via Packer with Ansible.
 - [Excel Ansible Inventory](https://github.com/KeyboardInterrupt/ansible_xlsx_inventory) - Turn any Excel Spreadsheet into an Ansible Inventory
 - [ansible-bundler](https://github.com/kriansa/ansible-bundler) - Turn Ansible playbooks into executable files
+- [YAML、YML在线编辑(校验)器](http://www.bejson.com/validators/yaml_editor/) - YAML、YML在线编辑(校验)器
+- [Ansible Template Tester](https://ansible.sivel.net/test/) - jinja2 模板校验
+- [J2Live](https://j2live.ttl255.com/) - jinja2 模板校验
 
 ## IDE
 - [Ansible Vim](https://github.com/pearofducks/ansible-vim) - 适用于 **Ansible** 语法 的 **vim** 插件

@@ -1439,3 +1439,39 @@ node03 ansible_host=10.18.1.192
 
     - debug: msg="ID--> {{ id | int }}, role --> {{ role }}"
 ```
+
+
+
+## 排序版本号
+
+提取给定的版本最大版本号
+
+```yaml
+- hosts: localhost
+  vars:
+   max: "19.03"
+   v:
+    - "19.03.0"
+    - "19.03.1"
+    - "19.03.10"
+    - "19.03.11"
+    - "19.03.12"
+    - "19.03.2"
+    - "19.03.3"
+    - "19.03.4"
+    - "19.03.5"
+  tasks:
+    - name: 使用map过滤器
+      debug: msg={{ max }}.{{ v | map('regex_replace', max + '\.', '') | map('int') | list | sort | last }}
+      
+    - name: 使用模板for循环
+      debug: |-
+       msg="{%- set vmax = {'max': max + '.0'} -%}
+       {%- for ver in v -%}
+         {%- if vmax['max'] is version(ver, '<') -%}
+           {%- set _ = vmax.update({"max": ver}) -%}
+         {%- endif -%}
+       {%- endfor -%}
+       {{ vmax['max'] }}"
+```
+
