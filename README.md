@@ -23,6 +23,8 @@ And then start the server by running the mkdocs serve command:
 mkdocs serve
 ```
 
+
+
 ## Resources
 
 - [MkDocs](https://www.mkdocs.org/)
