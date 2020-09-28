@@ -16,7 +16,7 @@ theme:
   name: 'material'
   language: 'zh'
   features:
-    - tabs
+    - navigation.tabs
   palette:
     scheme: default
     primary: 'indigo'
