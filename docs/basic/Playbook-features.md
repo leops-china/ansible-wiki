@@ -1280,7 +1280,7 @@ tasks:
 YAML 语法见[详细介绍](/basic/Reference/Yaml/)
 
 
-## Prompts： **运行时，提示输入内容**
+## Prompts: 运行时，提示输入内容
 
 在运行playbook时，您可能希望提示用户输入某些内容，可以通过`vars_prompt`实现这一点。
 

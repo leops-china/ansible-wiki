@@ -24,117 +24,116 @@
 
 > 大家选择下面的一种方式进行安装 `ansible`
 
-``` bash tab="CentOS/RHEL"
-sed -e 's!^#baseurl=!baseurl=!g' \
-       -e  's!^mirrorlist=!#mirrorlist=!g' \
-       -e 's!mirror.centos.org!mirrors.aliyun.com!g' \
-       -i  /etc/yum.repos.d/CentOS-Base.repo
+=== "CentOS/RHEL"
+    ``` bash
+    sed -e 's!^#baseurl=!baseurl=!g' \
+           -e  's!^mirrorlist=!#mirrorlist=!g' \
+           -e 's!mirror.centos.org!mirrors.aliyun.com!g' \
+           -i  /etc/yum.repos.d/CentOS-Base.repo
 
-yum install -y epel-release
+    yum install -y epel-release
 
-sed -e 's!^mirrorlist=!#mirrorlist=!g' \
-    -e 's!^metalink=!#metalink=!g' \
-    -e 's!^#baseurl=!baseurl=!g' \
-    -e 's!//download\.fedoraproject\.org/pub!//mirrors.aliyun.com!g' \
-    -e 's!http://mirrors\.aliyun!https://mirrors.aliyun!g' \
-    -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
+    sed -e 's!^mirrorlist=!#mirrorlist=!g' \
+        -e 's!^metalink=!#metalink=!g' \
+        -e 's!^#baseurl=!baseurl=!g' \
+        -e 's!//download\.fedoraproject\.org/pub!//mirrors.aliyun.com!g' \
+        -e 's!http://mirrors\.aliyun!https://mirrors.aliyun!g' \
+        -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
 
-yum install -y ansible
-```
+    yum install -y ansible
+    ```
+=== "Ubuntu"
+    ``` bash
+    $ sudo apt update
+    $ sudo apt install software-properties-common
+    $ sudo apt-add-repository --yes --update ppa:ansible/ansible
+    $ sudo apt install ansible
+    ```
+=== "Debian"
+    ``` bash
+    deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+    $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+    $ sudo apt update
+    $ sudo apt install ansible
+    ```
 
-``` bash tab="Ubuntu"
-$ sudo apt update
-$ sudo apt install software-properties-common
-$ sudo apt-add-repository --yes --update ppa:ansible/ansible
-$ sudo apt install ansible
-```
+=== "FreeBSD"
+    ``` bash
+    $ sudo pkg install py27-ansible
+    # or
+    $ sudo pkg install py36-ansible
+    ```
 
-``` bash tab="Debian"
-deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
-$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-$ sudo apt update
-$ sudo apt install ansible
-```
+=== "dnf"
+    ``` bash
 
+    $ sudo dnf install ansible
+    ```
+    
+=== "mac"
+    ``` bash
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+    sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
+    # 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
+    ```
+=== "pip"
+    ``` bash
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+    pip install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
 
-``` bash tab="FreeBSD"
-$ sudo pkg install py27-ansible
-# or
-$ sudo pkg install py36-ansible
-```
+    # 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
+    ```
 
-
-``` bash tab="dnf"
-
-$ sudo dnf install ansible
-```
-
-``` bash tab="mac"
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
-# 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
-
-```
-
-``` bash tab="pip"
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-pip install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
-
-# 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
-
-```
-
-
-``` bash tab="Python3"
-yum install -y python36 python36-tools
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3.6 get-pip.py 
-pip3.6 install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
-# 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
-```
-
-``` bash tab="源码"
-yum install -y  python-setuptools
-easy_install pip
-wget https://github.com/ansible/ansible/archive/v2.9.6.tar.gz
-tar zxf v2.9.6.tar.gz
-cd ./ansible-2.9.6
-pip install -r ./requirements.txt
-python setup.py install
-mkdir /etc/ansible/
-cp examples/{ansible.cfg,hosts} /etc/ansible/
-```
-
-``` bash tab="离线安装"
-# 以目标主机centos7为测试
-# 1. 下载ansible及依赖系统包
-curl -sSL https://cdn.jsdelivr.net/gh/lework/script/shell/get_packages.sh | bash -s - centos7 ansible
-# 2. 下载好的离线包在当前目录的package_centos7_ansible
-ls package_centos7_ansible
-# 3. 将目录拷贝到目标主机,在当前目录安装
-yum localinstall *.rpm
-```
-
-
-
+=== "Python3"
+    ``` bash
+    yum install -y python36 python36-tools
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3.6 get-pip.py 
+    pip3.6 install ansible -i https://mirrors.ustc.edu.cn/pypi/web/simple
+    # 通过此方式安装的没有生成/etc/ansible文件，可以手动生成，配置文件示例到https://github.com/ansible/ansible/tree/devel/examples
+    ```
+=== "源码"
+    ``` bash
+    yum install -y  python-setuptools
+    easy_install pip
+    wget https://github.com/ansible/ansible/archive/v2.9.6.tar.gz
+    tar zxf v2.9.6.tar.gz
+    cd ./ansible-2.9.6
+    pip install -r ./requirements.txt
+    python setup.py install
+    mkdir /etc/ansible/
+    cp examples/{ansible.cfg,hosts} /etc/ansible/
+    ```
+=== "离线安装"
+    ``` bash
+    # 以目标主机centos7为测试
+    # 1. 下载ansible及依赖系统包
+    curl -sSL https://cdn.jsdelivr.net/gh/lework/script/shell/get_packages.sh | bash -s - centos7 ansible
+    # 2. 下载好的离线包在当前目录的package_centos7_ansible
+    ls package_centos7_ansible
+    # 3. 将目录拷贝到目标主机,在当前目录安装
+    yum localinstall *.rpm
+    ```
+    
 ## bash命令行自动补全
 
 > 在Ansible 2.9之后，就支持了命令行参数补齐功能
 
-``` bash tab="CentOS/RHEL"
-yum install epel-release
-yum install python-argcomplete
-```
-
-``` bash tab="apt"
-$ sudo apt install python-argcomplete
-```
-
-``` bash tab="pip"
-pip install argcomplete
-```
+=== "CentOS/RHEL"
+    ``` bash
+    yum install epel-release
+    yum install python-argcomplete
+    ```
+=== "apt"
+    ``` bash
+    $ sudo apt install python-argcomplete
+    ```
+=== "pip"
+    ``` bash
+    pip install argcomplete
+    ```
 
 **将补全加入环境变量**
 

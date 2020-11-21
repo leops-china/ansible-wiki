@@ -192,8 +192,7 @@ Jinja 中的 if 语句可比 Python 中的 if 语句。
 | true/false                               | true 永远是 true ，而   false 始终是 false 。                |
 
 !!! note 提示
-
-​	特殊常量 true 、 false 和 none 实际上是小写的。因为这在过去会导致 混淆，过去 True扩展为一个被认为false 的未定义的变量。所有的这三个 常量也可以被写成首字母大写（ True 、 False 和 None ）。尽管如此， 为了一致性（所有的 Jinja 标识符是小写的），你应该使用小写的版本。
+    特殊常量 true 、 false 和 none 实际上是小写的。因为这在过去会导致 混淆，过去 True扩展为一个被认为false 的未定义的变量。所有的这三个 常量也可以被写成首字母大写（ True 、 False 和 None ）。尽管如此， 为了一致性（所有的 Jinja 标识符是小写的），你应该使用小写的版本。
 
  
 
