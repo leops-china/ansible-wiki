@@ -1475,3 +1475,8 @@ node03 ansible_host=10.18.1.192
        {{ vmax['max'] }}"
 ```
 
+## 获取 sysctl 值
+
+```bash
+ansible localhost -m debug -a "msg={{ lookup('pipe', 'sysctl -n vm.swappiness')}}" 
+```

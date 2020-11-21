@@ -17,6 +17,7 @@ theme:
   language: 'zh'
   features:
     - navigation.tabs
+    - navigation.instant
   palette:
     scheme: default
     primary: 'indigo'
