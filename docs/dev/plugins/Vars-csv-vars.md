@@ -13,6 +13,7 @@ localhost,192.168.30.254,192.168.30.31,192.168.40.31,192.168.50.31,192.168.60.31
 
 - 将 csv 文件放在 `inventory` 或 `playbook` 下的`csv_vars`目录中，就会被自动解析。
 - csv 中的 `hostname` 字段要与 `inventory` 的主机名称一致。
+- 建议将 csv 命名为 <GROUP_OR_HOST_NAME>.csv，支持多个 csv 文件，并且支持变量覆盖。
 
 ## 编写插件
 
